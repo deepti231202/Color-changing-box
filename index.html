@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Box</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div id="Box" class="box">
+        <p id="colorText">Background Color: <span id="color">Pink</span></p>
+    </div>
+    <button id="Btn">Click Here</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var colorBox = document.getElementById('Box');
+    var colorText = document.getElementById('color');
+    var Btn = document.getElementById('Btn');
+
+    var colors = ['Pink', 'Violet', 'Plum', 'Yellow', 'Purple'];
+    var colorIndex = 0;
+
+    Btn.onclick = function() {
+        colorIndex = (colorIndex + 1) % colors.length;
+        var newColor = colors[colorIndex];
+        colorBox.style.backgroundColor = newColor.toLowerCase();
+        colorText.textContent = newColor;
+        Btn.style.backgroundColor=newColor;
+    }
+});
+
+    </script>
+</body>
+</html>
+
+
